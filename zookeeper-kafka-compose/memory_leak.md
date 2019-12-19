@@ -27,3 +27,9 @@ just in case it is something similar
 # real-case:
 - https://github.com/confluentinc/confluent-kafka-dotnet/issues/1022
 - https://github.com/confluentinc/confluent-kafka-python/issues/543
+
+# kafka-架構摘要
+- https://blog.csdn.net/u013573133/article/details/48142677
+- https://blog.csdn.net/zz_1111/article/details/89844661
+- https://blog.csdn.net/weixin_34318272/article/details/85885738
+- https://blog.csdn.net/u013256816/article/details/54896952
