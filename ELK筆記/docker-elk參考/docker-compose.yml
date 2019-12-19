@@ -99,7 +99,6 @@ services:
     #build: .
     ports:
       - "9092:9092"
-      - "29092:29092"
     environment:
       # 因為kafka放在container裡面。如果logstash來拿的時候會參照這個值去訪問kafk的IP，會變成logstash訪問127.0.0.1(logstash訪問logstash自己的)的狀況
       # 但是用`kafka`的dns來找又會變成無法正常生產到kafka ... 所以 /etc/hosts 還要再額外綁定一條record `127.0.0.1 kafka`
