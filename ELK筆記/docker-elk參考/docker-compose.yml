@@ -67,7 +67,7 @@ services:
     command: /nsqd --lookupd-tcp-address=nsqlookupd:4160
     depends_on:
       - nsqlookupd
-    hostname: nsqd
+    hostname: nsqd # 要在/etc/hosts綁定 127.0.0.1 nsqd，否則會變成logstash找nsqadmin要資訊的時候無法解析nsqd
     ports:
       - "4151:4151"
       - "4150:4150"
@@ -86,6 +86,35 @@ services:
     container_name: "nsqadmin"
     networks:
       - proxy-network
+
+  zookeeper:
+    image: wurstmeister/zookeeper
+    ports:
+      - "2181:2181"
+    networks:
+      - proxy-network  
+
+  kafka:
+    image: wurstmeister/kafka
+    #build: .
+    ports:
+      - "9092:9092"
+      - "29092:29092"
+    environment:
+      # 因為kafka放在container裡面。如果logstash來拿的時候會參照這個值去訪問kafk的IP，會變成logstash訪問127.0.0.1(logstash訪問logstash自己的)的狀況
+      # 但是用`kafka`的dns來找又會變成無法正常生產到kafka ... 所以 /etc/hosts 還要再額外綁定一條record `127.0.0.1 kafka`
+      KAFKA_ADVERTISED_HOST_NAME: kafka
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_PORT: "9092"
+      KAFKA_DELETE_TOPIC_ENABLE: "true"
+      KAFKA_BROKER_ID: "1"
+      KAFKA_LOG_DIRS: "/opt/kafka/data"
+      KAFKA_CREATE_TOPICS: "sarama:1:2"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - proxy-network  
+
 
 networks:
   proxy-network:
