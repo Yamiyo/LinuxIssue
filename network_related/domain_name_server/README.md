@@ -26,4 +26,7 @@ DNS系統是由各式各樣的DNS軟體所驅動的，例如：
 
 
 # refer
-https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F
+- https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9F
+
+# refer_攻擊相關:
+- https://kknews.cc/zh-tw/code/jm8oeal.html

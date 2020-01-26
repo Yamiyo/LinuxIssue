@@ -1,8 +1,8 @@
-# 聯絡方式
+# 聯絡方式 (contract)
 - 信箱：berserker.01.tw@hotmail.com
 
 
-# 教育背景
+# 教育背景 (education)
 1. 研究所(2011~2013):國立成功大學統計研究所
 > Institute(2011~2013):Department of Statistics, NCKU
 
@@ -10,8 +10,8 @@
 > College(2007~2011):Department of Mathmatics, CCU
 
 
-# 工作經歷
-- (2019~Now):雲中雲科技有限公司-golang工程師
+# 工作經歷 (experience)
+- (2019~2020):雲中雲科技有限公司-golang工程師
 1. Ability to maintain and develop golang projects
 2. Ability to leverage services with `NSQ` and `Redis`
 3. Ability to monitor service with `Grafana` and `Prometheus`
