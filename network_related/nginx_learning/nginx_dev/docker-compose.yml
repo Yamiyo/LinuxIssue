@@ -1,0 +1,8 @@
+version: "3"
+services:
+  nginx_openresty:
+    image: openresty/openresty:1.9.15.1-trusty
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf:ro
