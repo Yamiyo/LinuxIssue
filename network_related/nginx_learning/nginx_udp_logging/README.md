@@ -18,3 +18,4 @@ la/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko
 
 # refer:
 - https://blog.techbridge.cc/2018/03/17/docker-build-nginx-tutorial/
+- https://docs.nginx.com/nginx/admin-guide/monitoring/logging/
