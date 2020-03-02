@@ -8,7 +8,7 @@ function connect_redis()
     client:set_timeout(10000)  --10秒
 
     -- 要換成 redis container的內部ip
-    local result, errmsg = client:connect('172.26.0.2', 6379) --redis server host and port
+    local result, errmsg = client:connect('172.18.0.3', 6379) --redis server host and port
     if not result then
         ngx.log(ngx.ERR, "connect redis failed: " .. (errmsg or "nil"))
         return
