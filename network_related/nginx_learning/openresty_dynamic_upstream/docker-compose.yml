@@ -2,7 +2,8 @@ version: "3"
 services:
   nginx_openresty:
     container_name: openresty
-    image: openresty/openresty:1.9.15.1-trusty
+    # image: openresty/openresty:1.9.15.1-trusty
+    image: openresty/openresty # 2020/03/03 - 1.15.8.2
     ports:
       - "80:80"
     volumes:
