@@ -1,12 +1,13 @@
 version: "3"
 services:
   nginx_openresty:
+    container_name: openresty
     image: openresty/openresty:1.9.15.1-trusty
     ports:
       - "80:80"
     volumes:
       - ./nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf:ro
-      - ./lua:/usr/local/openresty/nginx/lua:ro
+      # - ./lua:/usr/local/openresty/nginx/lua:ro
     networks:
       - proxy-network
 
