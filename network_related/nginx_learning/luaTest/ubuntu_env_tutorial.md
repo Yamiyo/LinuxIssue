@@ -21,20 +21,24 @@ sudo luarocks install luasocket
 lua
 
 
-3. install openresty
+3. configure openresty Makfile
 
 > ./configure --prefix=/home/ubuntu/openresty --with-pcre-jit --with-ipv6 --without-http_redis2_module --with-http_iconv_module --with-http_postgres_module -j8
 
+4. install openresty via `make install`
+
+> make install
 
 # pre-request
-apt-get install  \
-
-1. unzip
-2. libpcre3-dev
-3. libssl-dev
-4. perl
-5. make
-6. build-essential
-7. curl
-8. libpq-dev
-9. zlib1g-dev
+```bash
+sudo apt-get install -y \
+ unzip \
+ libpcre3-dev \
+ libssl-dev \
+ perl \
+ make \
+ build-essential \
+ curl \
+ libpq-dev \
+ zlib1g-dev
+```
