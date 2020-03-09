@@ -65,8 +65,8 @@ server {
 # 仿造上述的情境，到nginx.conf設定
 http {
     upstream my_upstream {
-        serverr 192.168.1.1:2368;
-        serverr 192.168.1.2:2368;
+        server 192.168.1.1:2368;
+        server 192.168.1.2:2368;
     }
     server_name www.example.com;
     location / {
@@ -101,7 +101,7 @@ server {
 以增加cache的機制來說，比較常見的有;private/public/no-cache/no-control，可以透過add_header Header_name Header_value
 ```
 e.g. 我想要一個我的物件永遠不要被任何人緩存(CDN/browser)
-serverr {
+server {
     listen 80;
     server_name www.example.com;
     
