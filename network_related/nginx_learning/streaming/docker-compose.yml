@@ -5,26 +5,38 @@ networks:
     driver: bridge
 
 services:
-  web:
+  tcpnginx:
+    # image: nginx:1.13.7
+    image: openresty/openresty # 2020/03/03 - 1.15.8.2
+    container_name: tcpnginx
     networks:
       - proxy-net
-    image:  nginx:1.13.7
     ports:
-      - "80:80"
+      - "3000:3000"
     volumes:
-      # put index.html in folder html would mount into conatiner
-      - ./index.html:/usr/share/nginx/html/index.html
-      # put default.conf in folder conf would moutn into ...
-      - ./default.conf:/etc/nginx/conf.d/default.conf
       # put nginx.conf outside
-      - ./nginx.conf:/etc/nginx/nginx.conf
-      # mount ssl
-      # - ./ssl:/etc/nginx/ssl
-      # mount nginx logs
-      - ./log:/var/log/nginx
-#  ws:
-#    networks:
-#      - proxy-net
-#    build: .
-#    ports:
-#      - 8010:8010
+      # - ./tcp_nginx.conf:/etc/nginx/nginx.conf
+      - ./tcp_nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf
+
+
+  tcpecho1:
+    image: cjimti/go-echo
+    container_name: tcpecho1
+    environment:
+      - TCP_PORT=2701
+      - NODE_NAME=EchoNode
+    networks:
+      - proxy-net
+    # ports:
+      # - 2701
+    
+  tcpecho2:
+    image: cjimti/go-echo
+    container_name: tcpecho2
+    environment:
+      - TCP_PORT=2701
+      - NODE_NAME=EchoNode
+    networks:
+      - proxy-net
+    # ports:
+      # - 2701
