@@ -23,6 +23,11 @@ Base64原理：將8位的二進位制位元組序列劃分為6位的塊，不足
 為什麼要用base64，有哪些情境需求?
 - https://www.zhihu.com/question/36306744
 
+對稱加密(symmetric encryption)&非對稱加密(asymmetric encryption): AES vs RSA
+- https://david50.pixnet.net/blog/post/28796015
+	- AES: 使用固定字串加解密
+	- RSA: public加密/private解密
+
 # extend-refer:
 golang的AES加解密算法
 - https://www.jianshu.com/p/9c1c8958b279
