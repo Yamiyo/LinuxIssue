@@ -22,3 +22,7 @@ curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.27.0/minik
 5. 啟動minikube: `minikube start`
 (等待下載結束...)
 6. 確認cluster設定完成: `kubectl api-versions`
+
+# extend-refer2:
+- 針對pod以及namespace限定資源
+> https://k8smeetup.github.io/docs/tasks/administer-cluster/cpu-memory-limit/
