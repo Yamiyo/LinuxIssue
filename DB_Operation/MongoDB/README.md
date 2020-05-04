@@ -9,10 +9,17 @@ mongodb 是目前市佔率數一數二的nosql資料庫，此例主要在練習�
 > docker exec -it mongo mongo -u root -p example
 
 - dump data
-> mongodump -d ${your_database} -o ./${dumped_data}
+> mongodump -d ${your_database_name} -o ./${dumped_data}
+
+- dump data (with user/password) * 這邊登入使用者是存在 `admin`，所以database要選admin
+> mongodump -u ${your_mongo_user} -p ${your_mongo_password} --authenticationDatabase admin -d ${your_database_name} -o ./${dumped_data}
 
 - restore data
-> mongorestore -d ${your_database} ./${dumped_data}
+> mongorestore -d ${your_database_name} ./${dumped_data}
+
+- restore data (with user/password) * 這邊登入使用者是存在 `admin`，所以database要選admin
+> mongorestore -u ${your_mongo_user} -p ${your_mongo_password} --authenticationDatabase admin -d ${your_database_name} ./${dumped_data}
+
 
 ### cluster infra
 mongodb cluster
@@ -54,6 +61,10 @@ rs.initiate(config)
 # refer:
 docker run mongodb
 - https://pjchender.github.io/2018/12/09/mongo-mongodb-%E6%93%8D%E4%BD%9C/
+
+restore dump data with specific user-password
+- https://stackoverflow.com/questions/44238337/how-to-use-mongorestore-mongodump-with-username-and-password
+- https://docs.mongodb.com/manual/tutorial/backup-and-restore-tools/
 
 backup & restore
 - http://mongodbcanred.blogspot.com/2015/01/mongodbmongodump-mongorestore.html
