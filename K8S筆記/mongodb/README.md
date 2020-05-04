@@ -1,4 +1,4 @@
-# mysql 做持久化
+# mongo 做持久化
 1. 在deployment文件中加入`volumes`，提供給containers做使用
 
 
@@ -7,24 +7,24 @@ spec:
   # replicas: 3 # number of pods need to create
   selector:
     matchLabels:
-      app: mysql
+      app: mongo
   template:
     metadata:
       labels:
-        app: mysql
+        app: mongo
     spec:
       hostNetwork: false 
       containers:
         ...
 
         volumeMounts:
-         - name: mysql-persistent-storage
-           mountPath: /var/lib/mysql
+         - name: mongo-persistent-storage
+           mountPath: /data/db
 
       volumes:
-        - name: mysql-persistent-storage
+        - name: mongo-persistent-storage
           persistentVolumeClaim:
-            claimName: mysql-volumeclaim
+            claimName: mongo-volumeclaim
 ```
 
 2. 新增一個`pvc.yml`，給deployment.yml參照
@@ -32,7 +32,7 @@ spec:
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: mysql-volumeclaim
+  name: mongo-volumeclaim
 spec:
   accessModes:
     - ReadWriteOnce
