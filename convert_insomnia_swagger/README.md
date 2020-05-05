@@ -1,7 +1,7 @@
 # intro
 api是作為restful最常見的一個名詞，其中不錯的api client諸如`postman`尤其是企業愛用
 
-但是一個`企業版`的postname要價是30$(方案)+20$(每人)*20(至少20人)
+但是一個`企業版`的postname要價是`24$(方案)+30$(每人)*5(至少5人)`
 
 且postman的workspace還無法一次性dump，導致不易控管各個API的版本
 
@@ -31,7 +31,7 @@ linux
 > docker-compose up -d
 
 
-3. 開啟網頁`http://127.0.0.1:8080/`，選擇`./config/watchnow.json`來顯示對應的swagger-ui
+3. 開啟網頁`http://127.0.0.1:8080/`，選擇`./swaggymnia/watchnow.json`來顯示對應的swagger-ui
 ![image](https://github.com/jim0409/LinuxIssue/blob/master/convert_insomnia_swagger/demo.png)
 
 
