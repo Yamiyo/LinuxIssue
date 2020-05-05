@@ -10,7 +10,8 @@ api是作為restful最常見的一個名詞，其中不錯的api client諸如`po
 - insomnia:
 ```
 - https://github.com/Kong/insomnia/releases/v7.1.1
-(linux) wget 
+(linux) wget https://github.com/Kong/insomnia/releases/download/v7.1.1/insomnia-7.1.1.tar.gz
+(mac) wget https://github.com/Kong/insomnia/releases/download/v7.1.1/Insomnia-7.1.1-mac.zip
 ```
 - swaggymnia:
 ```
