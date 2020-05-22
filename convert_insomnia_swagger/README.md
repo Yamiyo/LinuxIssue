@@ -9,10 +9,12 @@ api是作為restful最常見的一個名詞，其中不錯的api client諸如`po
 # solution
 - insomnia:
 ```
-- https://github.com/Kong/insomnia/releases/v7.1.1
-(linux) wget https://github.com/Kong/insomnia/releases/download/v7.1.1/insomnia-7.1.1.tar.gz
-(mac) wget https://github.com/Kong/insomnia/releases/download/v7.1.1/Insomnia-7.1.1-mac.zip
+- https://github.com/Kong/insomnia/releases/v5.16.6
+(linux) wget https://github.com/Kong/insomnia/releases/download/v5.16.6/insomnia-5.16.6.tar.gz
+(mac) wget https://github.com/Kong/insomnia/releases/download/v5.16.6/Insomnia-5.16.6.dmg
 ```
+* notes: 1. 因為目前swaggymnia的作者沒有再更新所以只能用舊版的`Insomnia(5.16.6)`;2. 下載後需要將自動更新關閉，避免後續更新上去以後export出來的檔案無法convert成swagger.json
+
 - swaggymnia:
 ```
 (linux) wget https://s3.amazonaws.com/swaggymnia/1.0.0-beta/linux/swaggymnia
