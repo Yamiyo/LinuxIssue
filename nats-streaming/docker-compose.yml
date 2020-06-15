@@ -15,8 +15,9 @@ services:
       - proxy-network
 
   nats-exporter1:
-    image: synadia/prometheus-nats-exporter:0.3.0
-    command: ["-serverz", "nats://nats1:4221"]
+    image: synadia/prometheus-nats-exporter:latest
+    # command: ["-serverz", "nats://nats1:4221"]
+    command: ["-varz", "http://nats1:8221"]
     ports:
       - 7777:7777 # 打開對外 port: 7777
     networks:
@@ -37,8 +38,9 @@ services:
      - "./cluster2.config:/cluster.config"
 
   nats-exporter2:
-    image: synadia/prometheus-nats-exporter:0.3.0
-    command: ["-serverz", "nats://nats2:4222"]
+    image: synadia/prometheus-nats-exporter:latest
+    # command: ["-serverz", "nats://nats2:4222"]
+    command: ["-varz", "http://nats2:8222"]
     ports:
       - 7778:7777 # 打開對外 port 7778
     networks:
@@ -59,8 +61,9 @@ services:
      - "./cluster3.config:/cluster.config"
 
   nats-exporter3:
-    image: synadia/prometheus-nats-exporter:0.3.0
-    command: ["-serverz", "nats://nats3:4223"]
+    image: synadia/prometheus-nats-exporter:latest
+    # command: ["-serverz", "nats://nats3:4223"]
+    command: ["-varz", "http://nats3:8223"]
     ports:
       - 7779:7777 # 打開對外 port 7779
     networks:
