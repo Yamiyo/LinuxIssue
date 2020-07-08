@@ -65,3 +65,15 @@ local wrk = {
 
 # 探討 wrk 的併發數量
 - https://github.com/wg/wrk/issues/205#issuecomment-241214051
+
+
+# installation
+- https://github.com/wg/wrk/wiki/Installing-wrk-on-Linux
+
+
+# advanced sceniaro setup
+- http://czerasz.com/2015/07/19/wrk-http-benchmarking-tool-example/
+
+
+# jwt-package
+- https://github.com/Olivine-Labs/lua-jwt
