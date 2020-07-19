@@ -1,4 +1,7 @@
 # intro
+### setup test env
+> docker run --rm --name nginx -p 80:80 -d nginx:1.13.7
+
 ### AB for get
 script
 ```bash
@@ -24,3 +27,15 @@ post.json
     "params": "just parameters",
 }
 ```
+
+### execute jmeter benchmark test
+> jmeter -n -t test.jmx
+
+
+### check nginx access log (records ?= #request)
+> docker logs nginx|wc -l
+
+
+# refer:
+- https://learn-jmeter.blogspot.com/2016/10/how-to-run-test-plan-for-specified.html
+- https://blog.e-zest.com/how-to-run-jmeter-in-non-gui-mode/
