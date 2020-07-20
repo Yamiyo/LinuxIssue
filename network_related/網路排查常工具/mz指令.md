@@ -86,3 +86,13 @@ Mausezahn will send 10 frames...
 
  ...
 ```
+
+
+# refer:
+### installation _ centos
+- https://www.twblogs.net/a/5b88afa92b71775d1cddcd6f?lang=zh-cn
+```shell
+git clone https://github.com/uweber/mausezahn.git
+yum install -y cmake libpcap-devel libnet-devel libcli-devel gcc-g++
+cd mausezahn; cmake . && make && make install
+```
