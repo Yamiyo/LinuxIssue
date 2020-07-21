@@ -96,3 +96,6 @@ git clone https://github.com/uweber/mausezahn.git
 yum install -y cmake libpcap-devel libnet-devel libcli-devel gcc-g++
 cd mausezahn; cmake . && make && make install
 ```
+
+# docker run mz ~
+> docker run -it --rm  gophernet/mz -h
