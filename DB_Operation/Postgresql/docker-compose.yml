@@ -1,0 +1,19 @@
+version: '3.1'
+
+services:
+  psql:
+    image: postgres:9.6
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: kong
+      POSTGRES_DB: kong
+      POSTGRES_PASSWORD: kong
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 80:8080
+
