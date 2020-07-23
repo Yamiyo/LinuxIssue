@@ -5,6 +5,15 @@ networks:
   driver: bridge
 
 services:
+   proxy:
+     networks:
+       - kong-net
+     image: nginx:1.13.7
+     ports:
+       - "80:80"
+     volumes:
+       - ./proxy_site.conf:/etc/nginx/conf.d/default.conf
+
    web1:
      networks:
        - kong-net
