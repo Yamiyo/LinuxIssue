@@ -129,3 +129,11 @@ curl -H "Host: example.com" http://127.0.0.1/?id=1%20AND%201=1
 - https://www.modsecurity.org/
 
 - https://www.hi-linux.com/posts/45920.html
+
+
+# official download link
+### ModSecurity
+- https://github.com/SpiderLabs/ModSecurity/releases
+
+### Nginx
+- http://nginx.org/download/
