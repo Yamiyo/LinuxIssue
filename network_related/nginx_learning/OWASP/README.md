@@ -52,7 +52,7 @@ sed -ie 's/# SecDefaultAction "phase:2,log,auditlog,deny,status:403"/SecDefaultA
 
 # enable rules
 cd /root/modsecurity-2.9.1/
-cp modsecurity.conf-recommended /usr/local/nginx/conf/modsecurity.conf  
+cp modsecurity.conf-recommended /usr/local/nginx/conf/modsecurity.conf
 cp unicode.mapping  /usr/local/nginx/conf/
 
 
