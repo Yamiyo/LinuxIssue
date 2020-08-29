@@ -6,5 +6,9 @@
 ### 關於vsocde打開新的文件覆蓋窗口
 preference -> settings -> workbench.editero.showTabs: true
 
+### 將4個空白取代為`tab`
+cmd+shift+p
+`>Convert indentation to Tabs`
+
 #### refer
 - https://blog.csdn.net/weixin_44542598/article/details/86504818
