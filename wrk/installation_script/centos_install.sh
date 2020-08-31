@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # centos
-sudo yum groupinstall 'Development Tools'
+sudo yum groupinstall -y 'Development Tools'
 sudo yum install -y openssl-devel git 
 git clone https://github.com/wg/wrk.git wrk
 cd wrk
