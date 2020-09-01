@@ -6,8 +6,18 @@
 > yum -y install httpd-tools
 
 - wrk
-> yum install -y https://extras.getpagespeed.com/release-el7-latest.rpm; yum install -y wrk
+```bash
+#!/bin/bash
 
+# centos
+sudo yum groupinstall -y 'Development Tools'
+sudo yum install -y openssl-devel git 
+git clone https://github.com/wg/wrk.git wrk
+cd wrk
+make
+# move the executable to somewhere in your PATH
+sudo cp wrk /usr/bin/
+```
 
 # ab
 > ab -p post.json -T application/json -c 1000 -n 10000 http://127.0.0.1:9200/hello/employee

@@ -22,6 +22,28 @@ cluster.initial_master_nodes:
 
 ...
 ```
+# modify elasticsarch systemd config
+> vi /usr/lib/systemd/system/elasticsearch.service
+```conf elasticsearch.service
+...
+[Service]
+Type=notify
+RuntimeDirectory=elasticsearch
+PrivateTmp=true
+Environment=ES_HOME=/usr/share/elasticsearch  <--- 要改
+Environment=ES_PATH_CONF=/etc/elasticsearch   <--- 要改
+Environment=PID_DIR=/var/run/elasticsearch    <--- 要改
+Environment=ES_SD_NOTIFY=true
+EnvironmentFile=-/etc/sysconfig/elasticsearch <--- 要改
+
+WorkingDirectory=/usr/share/elasticsearch     <--- 要改
+
+User=elasticsearch
+Group=elasticsearch
+
+ExecStart=/usr/share/elasticsearch/bin/systemd-entrypoint -p ${PID_DIR}/elasticsearch.pid --quiet
+...
+```
 
 # refer:
 ### config es cluster
